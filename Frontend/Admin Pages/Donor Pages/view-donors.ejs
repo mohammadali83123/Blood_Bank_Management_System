@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatible Donors</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #dc3545;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+
+        th {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Compatible Donors of Your Blood Group</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Gender</th>
+            <th>Blood Group</th>
+        </tr>
+        <% if (view_donors.length > 0) { %>
+            <% for(let i = 0; i < view_donors.length; i++) { %>
+                <tr>
+                    <td><%- view_donors[i].Name %></td>
+                    <td><%- view_donors[i].Phone  %></td>
+                    <td><%- view_donors[i].Gender  %></td>
+                    <td><%- view_donors[i].Blood  %></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="9"><h2>No Donors Availabe</h2></td>
+            </tr>
+        <% } %> 
+    </table>
+</body>
+
+</html>

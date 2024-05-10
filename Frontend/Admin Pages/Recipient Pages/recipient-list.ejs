@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #dc3545;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+
+        th {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recipient List</h1>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Gender</th>
+            <th>Reason</th>
+            <th>Blood Group</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        <% if (recipient_list.length > 0) { %>
+            <% for(let i = 0; i < recipient_list.length; i++) { %>
+                <tr>
+                    <td><%- recipient_list[i].RID  %></td>
+                    <td><%- recipient_list[i].Name %></td>
+                    <td><%- recipient_list[i].Phone  %></td>
+                    <td><%- recipient_list[i].Gender  %></td>
+                    <td><%- recipient_list[i].Reason  %></td>
+                    <td><%- recipient_list[i].Blood  %></td>
+                    <td><%- recipient_list[i].Curr_Date  %></td>
+                    <td><a href="/delete-recipient?RID=<%- recipient_list[i].RID%>">Delete</a></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="9"><h2>recipient Data Not Found</h2></td>
+            </tr>
+        <% } %> 
+    </table>
+</body>
+
+</html>

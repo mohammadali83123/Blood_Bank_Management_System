@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient Logs</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #dc3545;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #dee2e6;
+        }
+
+        th {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recipient Logs</h1>
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Recipient ID</th>
+            <th>Action</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        <% if (recipient_logs.length > 0) { %>
+            <% for(let i = 0; i < recipient_logs.length; i++) { %>
+                <tr>
+                    <td><%- recipient_logs[i].RL_ID  %></td>
+                    <td><%- recipient_logs[i].RID %></td>
+                    <td><%- recipient_logs[i].Action  %></td>
+                    <td><%- recipient_logs[i].Curr_Date  %></td>
+                    <td><a href="/rollback-recipient?RID=<%- recipient_logs[i].RID%>">RollBack</a></td>
+                </tr>
+            <% } %>
+        <% } else { %>
+            <tr>
+                <td colspan="9"><h2>Recipient logs Data Not Found</h2></td>
+            </tr>
+        <% } %> 
+    </table>
+</body>
+
+</html>
