@@ -12,12 +12,15 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 //used for showing data from database to html
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, '../Frontend/static')));
+
+
 
 //  ------------------User----------------
 
 //  ------------------Donor Registeration Form----------------
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Frontend/index.html'));
+    res.sendFile(path.join(__dirname, '../Frontend/static/index.html'));
 });
 app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, '../Frontend/User Pages/about.html'));
