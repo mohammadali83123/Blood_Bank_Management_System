@@ -9,4 +9,5 @@ How to run the Project
 3. go to phpmyadmin localhost/phpmyadmin/
 3. create a database and name it bbms
 4. import the BBMS.sql file from db folder
-5. install the dependencies
+5. navigate to "cd Blood_Bank_Management_System\Backend"
+4. run "nodemon index.js"
