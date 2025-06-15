@@ -1,13 +1,41 @@
-Database Project
+# Database Project
 
-Blood Bank Management System
+## Blood Bank Management System
 
-How to run the Project
+### 🚀 How to Run the Project
 
-1. Clone the repo using git clone https://github.com/mohammadali83123/Blood_Bank_Management_System.git
-2. start your xampp controller, make sure that Apache and Mysql are running in xampp controller
-3. go to phpmyadmin localhost/phpmyadmin/
-3. create a database and name it bbms
-4. import the BBMS.sql file from db folder
-5. navigate to "cd Blood_Bank_Management_System\Backend"
-4. run "nodemon index.js"
+1. **Clone the Repository**
+
+```bash
+git clone https://github.com/mohammadali83123/Blood_Bank_Management_System.git
+```
+
+2. **Start XAMPP Controller**
+
+- Make sure that both **Apache** and **MySQL** are running.
+
+3. **Set Up the Database**
+
+- Open your browser and go to:  
+  ```
+  http://localhost/phpmyadmin/
+  ```
+- Create a new database and name it:  
+  ```
+  bbms
+  ```
+- Import the `BBMS.sql` file from the `db` folder into the `bbms` database.
+
+4. **Start the Backend Server**
+
+```bash
+cd Blood_Bank_Management_System/Backend
+nodemon index.js
+```
+
+> ✅ Make sure `nodemon` is installed globally. You can install it using:
+> ```bash
+> npm install -g nodemon
+> ```
+
+---
